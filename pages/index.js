@@ -17,4 +17,12 @@ export default function Home() {
       setHasMetamask(true);
     }
   });
+
+  const {
+    active,
+    activate,
+    chainId,
+    account,
+    library: provider,
+  } = useWeb3React();
 }
