@@ -25,4 +25,15 @@ export default function Home() {
     account,
     library: provider,
   } = useWeb3React();
+
+  async function connect() {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await activate(injected);
+        setHasMetamask(true);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
 }
