@@ -9,3 +9,12 @@ import { ethers } from "ethers";
 
 export const injected = new InjectedConnector();
 
+export default function Home() {
+  const [hasMetamask, setHasMetamask] = useState(false);
+
+  useEffect(() => {
+    if (typeof window.ethereum !== "undefined") {
+      setHasMetamask(true);
+    }
+  });
+}
