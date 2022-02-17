@@ -6,4 +6,12 @@ const getLibrary = (provider) => {
   return new Web3Provider(provider);
 };
 
+function MyApp({ Component, pageProps }) {
+  return (
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <Component {...pageProps} />
+    </Web3ReactProvider>
+  );
+}
 
+export default MyApp;
